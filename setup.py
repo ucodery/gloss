@@ -4,7 +4,7 @@ with open("README.md", "r") as f:
     long_description = f.read()
 
 setup(
-    name="gloss",
+    name="gloss-collection",
     version="1.0",
     author="Jeremiah Paige",
     author_email="ucodery@gmail.com",
@@ -19,7 +19,7 @@ setup(
     description="A synchronous one-to-one mapping type",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    keywords="dict map mapping gloss glossary translation",
+    keywords="dict map mapping collection gloss glossary translation",
     classifiers=[
         "License :: OSI Approved :: BSD License",
         "Operating System :: OS Independent",

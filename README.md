@@ -1,7 +1,7 @@
-# Gloss
+# gloss-collection
 Gloss (short for glossary) is a different kind of dictionary.
 All values also automatically become keys and so can be looked
-up in the gloss to find its corresponding 'key'. This makes it
+up in the Gloss to find its corresponding 'key'. This makes it
 easy to lookup and maintain one-to-one relationships such as a
 label to a certain magnitude.
 

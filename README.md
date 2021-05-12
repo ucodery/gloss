@@ -40,18 +40,18 @@ are probably faster and more space efficient. However, some
 limitations of Enums solved by Gloss are:
 
 * enum members are static. They are defined all at once in the
-class and their values cannot change. A Gloss on the other hand
-can be added to, altered, even have members deleted or popped,
-all at runtime
+  class and their values cannot change. A Gloss on the other hand
+  can be added to, altered, even have members deleted or popped,
+  all at runtime
 * Accessing Enum member namess and their values are differnt
-operations. Looking up a member by name is done with either dot
-dereference or getitem; looking up a member by value is done
-with a call. With a Gloss you don't have to know which side of
-the mapping your key is on (if there even is a distinction to the
-mapping), it is all done by getitem
+  operations. Looking up a member by name is done with either dot
+  dereference or getitem; looking up a member by value is done
+  with a call. With a Gloss you don't have to know which side of
+  the mapping your key is on (if there even is a distinction to the
+  mapping), it is all done by getitem
 * One side of an enum mapping must be a string. Because member
-names are attributes they must follow Python identifier naming
-rules. In a Gloss, all keys may be any hashable object
+  names are attributes they must follow Python identifier naming
+  rules. In a Gloss, all keys may be any hashable object
 
 ## Shouldn't I just use a dict?
 While the classic dict solves some of limitations of using an Enum,

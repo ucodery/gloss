@@ -1,3 +1,6 @@
+_This is the final release to gloss-colletion._<br/>
+_Find future updates at https://pypi.org/project/gloss/_
+
 # gloss-collection
 Gloss (short for glossary) is a different kind of dictionary.
 All values also automatically become keys and so can be looked

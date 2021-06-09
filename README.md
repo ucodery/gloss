@@ -1,7 +1,4 @@
-_This is the final release to gloss-colletion._<br/>
-_Find future updates at https://pypi.org/project/gloss/_
-
-# gloss-collection
+# gloss
 Gloss (short for glossary) is a different kind of dictionary.
 All values also automatically become keys and so can be looked
 up in the Gloss to find its corresponding 'key'. This makes it
@@ -32,21 +29,19 @@ example[1] = "shell pipe"
 print(example)
 #Gloss({"stdin": 0, "stderr": 2, "config.toml": 3, "shell pipe": 1})
 print([fd_or_desc for fd_or_desc in example])
-#["stdin", "stderr", "config.toml", "shell pipe", 0, 1, 2 , 3]
+#["stdin", "stderr", "config.toml", "shell pipe", 0, 1, 2, 3]
 ```
 
-## Shouldn't I just use an enum?
-Great thought! You can, and often should, use an
-[Enum](https://docs.python.org/3/library/enum.html) for these
-sorts of relationsips. Besides being built in to Python, Enums
-are probably faster and more space efficient. However, some
-limitations of Enums solved by Gloss are:
+## Differences from Enum
+[Enum](https://docs.python.org/3/library/enum.html) is a wonderful
+data structure that also supports 1-1 mappings and it's already built
+into Python. However, these limitations of Enums are solved by Gloss:
 
 * enum members are static. They are defined all at once in the
   class and their values cannot change. A Gloss on the other hand
   can be added to, altered, even have members deleted or popped,
   all at runtime
-* Accessing Enum member namess and their values are differnt
+* Accessing Enum member names and their values are different
   operations. Looking up a member by name is done with either dot
   dereference or getitem; looking up a member by value is done
   with a call. With a Gloss you don't have to know which side of
@@ -54,12 +49,13 @@ limitations of Enums solved by Gloss are:
   mapping), it is all done by getitem
 * One side of an enum mapping must be a string. Because member
   names are attributes they must follow Python identifier naming
-  rules. In a Gloss, all keys may be any hashable object
+  rules. In a Gloss, all terms may be any hashable object
 
-## Shouldn't I just use a dict?
-While the classic dict solves some of limitations of using an Enum,
-primarily being mutable at runtime, looking up any value is O(n) and
-therefore so is updating, deleting, poping, etc that value. In a
-Gloss searching for any value is O(1) time, and updating that value
-(for example chaning the key it maps to) can be done in a single
-operation.
+## Differences from Dict
+While the classic dict solves some of the limitations of using an Enum,
+primarily being mutable at runtime, it is not a 1-1 mapping.
+
+* enforcing uniqueness among dict values is a lot of extra work
+* looking up a dict value is O(n). Therefore so is updating, deleting,
+  popping, etc that value. Searching a Gloss for any term is O(1) time
+* updating any term in a Gloss takes a single operation
